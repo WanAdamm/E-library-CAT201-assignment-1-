@@ -1,7 +1,9 @@
 package com.example;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 public class BookPageController {
 
@@ -9,4 +11,14 @@ public class BookPageController {
     private void switchToHomePage() throws IOException {
         App.setRoot("home");
     }
+
+    @FXML
+    private TextField searchBar;
+
+    public void onUserHittingEnterInSearchBar()
+    {
+        String searchString = searchBar.getText();
+
+    }
+
 }
