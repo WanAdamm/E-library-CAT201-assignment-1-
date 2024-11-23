@@ -13,6 +13,11 @@ public class BookPageController {
     }
 
     @FXML
+    private void switchToAddBookPage() throws IOException {
+        App.setRoot("addBook");
+    }
+
+    @FXML
     private TextField searchBar;
 
     public void onUserHittingEnterInSearchBar()
