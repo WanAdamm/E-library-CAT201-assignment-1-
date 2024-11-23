@@ -85,33 +85,45 @@
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+                  <VBox prefHeight="77.0" prefWidth="140.0">
                      <children>
-                        <FontIcon iconLiteral="bi-facebook" iconSize="20">
-                           <HBox.margin>
-                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                           </HBox.margin>
-                        </FontIcon>
-                        <FontIcon iconLiteral="bi-youtube" iconSize="20" selectionEnd="0">
-                           <HBox.margin>
-                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                           </HBox.margin>
-                        </FontIcon>
-                        <FontIcon iconLiteral="bi-twitter" iconSize="20">
-                           <HBox.margin>
-                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                           </HBox.margin>
-                        </FontIcon>
-                        <FontIcon iconLiteral="bi-instagram" iconSize="20">
-                           <HBox.margin>
-                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                           </HBox.margin>
-                        </FontIcon>
+                        <Label prefHeight="17.0" prefWidth="141.0" style="-fx-font-weight: BOLD;" text="FOLLOW US:">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="138.0">
+                           <children>
+                              <FontIcon iconLiteral="bi-facebook" iconSize="20">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </HBox.margin>
+                              </FontIcon>
+                              <FontIcon iconLiteral="bi-youtube" iconSize="20" selectionEnd="0">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </HBox.margin>
+                              </FontIcon>
+                              <FontIcon iconLiteral="bi-twitter" iconSize="20">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </HBox.margin>
+                              </FontIcon>
+                              <FontIcon iconLiteral="bi-instagram" iconSize="20">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </HBox.margin>
+                              </FontIcon>
+                           </children>
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </HBox>
                      </children>
-                     <padding>
-                        <Insets left="15.0" />
-                     </padding>
-                  </HBox>
+                  </VBox>
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #d5d5d5;" GridPane.columnIndex="1">
@@ -136,20 +148,29 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cecccc;" GridPane.columnIndex="2">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToBookPage" prefHeight="40.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="BOOKS &gt;" textAlignment="CENTER" wrapText="true">
+                  <Label contentDisplay="CENTER" onMouseClicked="#switchToBookPage" prefHeight="40.0" prefWidth="169.0" style="-fx-font-weight: bold;" text="BOOKS &gt;" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="129.0" style="-fx-font-weight: bold;" text=" SERVICE &gt;" textAlignment="CENTER" wrapText="true">
+                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="148.0" style="-fx-font-weight: bold;" text="SERVICE &gt;" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="CONTACT &gt;" textAlignment="CENTER" wrapText="true">
+                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="153.0" style="-fx-font-weight: bold;" text="CONTACT &gt;" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </Label>
                </children></VBox>
          </children>

@@ -2,15 +2,29 @@ package com.example;
 
 public class Book {
     private String title;
-    private int ISBN;
+    private String imgURL;
+    private String author;
+    private String ISBN;
     private boolean availability;
     private String borrowerName;
 
     // Constructor
-    public Book(String title, int ISBN, boolean availability, String borrowerName) {
+    public Book(String imgURL, String title, String author, String ISBN, String borrowerName, boolean availability) {
+        this.author = author;
+        this.imgURL = imgURL;
         this.title = title;
         this.ISBN = ISBN;
         this.availability = availability;
+        this.borrowerName = borrowerName;
+    }
+
+    // overloaded constructor
+    public Book(String imgURL, String title, String author, String ISBN, String borrowerName) {
+        this.author = author;
+        this.imgURL = imgURL;
+        this.title = title;
+        this.ISBN = ISBN;
+        this.availability = true;
         this.borrowerName = borrowerName;
     }
 
@@ -23,11 +37,27 @@ public class Book {
         this.title = title;
     }
 
-    public int getISBN() {
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getImgUrl() {
+        return imgURL;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgURL = imgUrl;
+    }
+
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 

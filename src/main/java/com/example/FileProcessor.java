@@ -3,36 +3,34 @@ package com.example;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class FileProcessor {
     public static void main(String[] args) {
         String filePath = "src/main/data/book data.csv"; // Replace with your file path
+        ArrayList<ArrayList<String>> data = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            // Read the header
-            String headerLine = br.readLine();
-            if (headerLine != null) {
-                System.out.println("Header:");
-                String[] headers = headerLine.split(",");
-                for (String header : headers) {
-                    System.out.print(header + "\t");
+            String line;
+            while ((line = br.readLine()) != null) {
+                // Split the line on commas, respecting quoted fields
+                String[] fields = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
+                
+                // Convert the array to an ArrayList and add it to the main list
+                ArrayList<String> row = new ArrayList<>();
+                for (String field : fields) {
+                    row.add(field.trim()); // Trim to remove unnecessary spaces
                 }
-                System.out.println("\n");
-
-                // Read and print data rows
-                System.out.println("Data:");
-                String line;
-                while ((line = br.readLine()) != null) {
-                    String[] fields = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1); // Split handling quotes
-                    for (String field : fields) {
-                        System.out.print(field.trim() + "\t");
-                    }
-                    System.out.println();
-                }
+                data.add(row);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // Print the data to verify the 2D ArrayList
+        System.out.println("CSV Data:");
+        for (ArrayList<String> row : data) {
+            System.out.println(row);
+        }
     }
 }
-
