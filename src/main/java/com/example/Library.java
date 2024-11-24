@@ -7,10 +7,11 @@ public class Library {
     
     private ArrayList<Book> bookList = new ArrayList <>();
 
-    // public void addBooks() //TODO: add implementation
-    // {
-
-    // }
+    public void addBooks(String imgURL, String title, String author, String ISBN) 
+    {
+        Book book = new Book(imgURL, title, author, ISBN, " "); // No borrower at initialization
+        bookList.add(book); 
+    }
 
     // public Book searchByTitle()
     // {

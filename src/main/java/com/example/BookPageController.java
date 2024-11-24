@@ -33,7 +33,7 @@ public class BookPageController {
     private TextField searchBar;
 
     public void onUserHittingEnterInSearchBar() {
-        String searchString = searchBar.getText();
+        String searchString = searchBar.getText(); // remember to use this as input field 
 
     }
 
@@ -88,7 +88,7 @@ public class BookPageController {
                 Image image = new Image(imageUrl);
                 bookThumbnail.setImage(image);
             } catch (Exception e) {
-                imageUrl = "http://ecx.images-amazon.com/images/I/51l6XIoa3rL.jpg";
+                imageUrl = "http://ecx.images-amazon.com/images/I/51l6XIoa3rL.jpg"; // default image if data fails.
                 Image image = new Image(imageUrl);
                 bookThumbnail.setImage(image);
             }
