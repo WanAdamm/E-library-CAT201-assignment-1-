@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.TextField;
@@ -16,6 +17,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 
 public class BookPageController {
 
@@ -33,7 +37,7 @@ public class BookPageController {
     private TextField searchBar;
 
     public void onUserHittingEnterInSearchBar() {
-        String searchString = searchBar.getText(); // remember to use this as input field 
+        String searchString = searchBar.getText(); // remember to use this as input field
 
     }
 
@@ -73,7 +77,6 @@ public class BookPageController {
             HBox container = new HBox();
             container.setPrefHeight(100);
             container.setPrefWidth(200);
-            
 
             ImageView bookThumbnail = new ImageView();
             bookThumbnail.setFitHeight(102.0);
@@ -95,8 +98,8 @@ public class BookPageController {
 
             VBox infoContainer = new VBox();
             infoContainer.setAlignment(Pos.CENTER_LEFT);
-            infoContainer.setPrefHeight(96.0);  
-            infoContainer.setPrefWidth(344.0);
+            infoContainer.setPrefHeight(100.0);
+            infoContainer.setPrefWidth(290.0);
             infoContainer.setPadding(new Insets(10.0, 10.0, 10.0, 10.0));
 
             Label title = new Label(book.getTitle());
@@ -107,8 +110,40 @@ public class BookPageController {
             infoContainer.getChildren().add(author);
             infoContainer.getChildren().add(isbn);
 
+            VBox buttonContainer = new VBox();
+            Button borrowButton = new Button("Borrow");
+
+            buttonContainer.setAlignment(Pos.BOTTOM_CENTER);
+            buttonContainer.setPrefHeight(200.0);
+            buttonContainer.setPrefWidth(100.0);
+
+            borrowButton.setPrefHeight(26.0);
+            borrowButton.setPrefWidth(78.0);
+
+            // borrow button functionality
+
+            borrowButton.setOnMousePressed(e -> {
+                try {
+                    // Load the FXML file
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("borrowerFormPage.fxml"));
+                    Parent root = loader.load(); // This initializes the controller
+
+                    // Get the controller
+                    BorrowerFormPageController controller = loader.getController();
+                    controller.setBook(book); // Pass the book to the next page
+                    
+                    // Switch the scene
+                    App.setScene(new Scene(root)); // Assuming App.setScene is defined in your app
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            });
+
+            buttonContainer.getChildren().add(borrowButton);
+
             container.getChildren().add(bookThumbnail);
             container.getChildren().add(infoContainer);
+            container.getChildren().add(buttonContainer);
 
             HBox.setMargin(bookThumbnail, new Insets(5.0, 5.0, 5.0, 5.0));
             HBox.setMargin(infoContainer, new Insets(5.0, 5.0, 5.0, 5.0));
@@ -116,4 +151,13 @@ public class BookPageController {
             bookListContainer.getChildren().add(container);
         }
     }
+
+    public void borrowBook(String ISBN) {
+        for (Book book : books) {
+            if (ISBN.equalsIgnoreCase(book.getISBN())) {
+                book.setBorrowerName("somename"); // TODO: add borrower name from form
+            }
+        }
+    }
+
 }
