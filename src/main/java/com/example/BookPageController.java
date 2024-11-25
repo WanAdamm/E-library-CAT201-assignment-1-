@@ -18,7 +18,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 public class BookPageController {
@@ -44,7 +43,7 @@ public class BookPageController {
     @FXML
     private VBox bookListContainer;
 
-    private ObservableList<Book> books;
+    private ObservableList<Book> books; // list used as a place to store book objects
 
     @FXML
     public void initialize() {
@@ -66,11 +65,15 @@ public class BookPageController {
                 }
 
                 Book book = new Book(row.get(0), row.get(1), row.get(2), row.get(3), "");
+                App.library.addBook(book);
 
-                books.add(book);
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        for (Book book : App.library.getBook()) {
+            books.add(book);
         }
 
         for (Book book : books) {
@@ -106,12 +109,27 @@ public class BookPageController {
             Label author = new Label(book.getAuthor());
             Label isbn = new Label(book.getISBN());
 
+            String available;
+            if (book.isAvailable()) {
+                available = "available";
+            } else {
+                available = "unavailable";
+            }
+
+            Label availability = new Label(available);
+
             infoContainer.getChildren().add(title);
             infoContainer.getChildren().add(author);
             infoContainer.getChildren().add(isbn);
+            infoContainer.getChildren().add(availability);
 
             VBox buttonContainer = new VBox();
             Button borrowButton = new Button("Borrow");
+
+            if(!book.isAvailable())
+            {
+                borrowButton.setDisable(true);
+            }
 
             buttonContainer.setAlignment(Pos.BOTTOM_CENTER);
             buttonContainer.setPrefHeight(200.0);
@@ -131,9 +149,9 @@ public class BookPageController {
                     // Get the controller
                     BorrowerFormPageController controller = loader.getController();
                     controller.setBook(book); // Pass the book to the next page
-                    
+
                     // Switch the scene
-                    App.setScene(new Scene(root)); // Assuming App.setScene is defined in your app
+                    App.setRoot(root); // Assuming App.setScene is defined in your app
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -151,13 +169,4 @@ public class BookPageController {
             bookListContainer.getChildren().add(container);
         }
     }
-
-    public void borrowBook(String ISBN) {
-        for (Book book : books) {
-            if (ISBN.equalsIgnoreCase(book.getISBN())) {
-                book.setBorrowerName("somename"); // TODO: add borrower name from form
-            }
-        }
-    }
-
 }

@@ -6,9 +6,17 @@ public class Library {
 
     private ArrayList<Book> bookList = new ArrayList<>();
 
-    public void addBooks(String imgURL, String title, String author, String ISBN) {
+    public void addBook(String imgURL, String title, String author, String ISBN) {
         Book book = new Book(imgURL, title, author, ISBN, " "); // No borrower at initialization
         bookList.add(book);
+    }
+
+    public void addBook(Book book) {
+        bookList.add(book);
+    }
+
+    public ArrayList<Book> getBook() {
+        return bookList;
     }
 
     public Book searchByTitle(String title) {

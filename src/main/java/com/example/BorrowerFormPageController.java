@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class BorrowerFormPageController {
 
@@ -19,14 +20,13 @@ public class BorrowerFormPageController {
 
     @FXML
     private Label ISBN;
-    
+
     @FXML
     private ImageView bookCover; // This is linked to the fx:id in FXML
 
     // Setter method to receive the book object
     public void setBook(Book book) {
         this.book = book; // Save the book object
-        System.out.println(book.getISBN());
         updateUI(); // Update the UI based on the book data
     }
 
@@ -55,6 +55,31 @@ public class BorrowerFormPageController {
 
     @FXML
     private void switchToBookPage() throws IOException {
+        App.setRoot("book");
+    }
+
+    @FXML
+    private TextField name;
+
+    @FXML
+    private TextField studentID;
+
+    @FXML
+    public void submitBorrowerInfo() throws IOException {
+        String borrowerName = name.getText();
+
+        for (Book bookk : App.library.getBook()) {
+            if (bookk.getAuthor().equals(book.getAuthor())) {
+
+                book.setAvailability(false); // set the availability to false
+                book.setBorrowerName(borrowerName); // set the borrowerName
+            }
+        }
+
+        // clear both textField
+        name.clear();
+        studentID.clear();
+
         App.setRoot("book");
     }
 
