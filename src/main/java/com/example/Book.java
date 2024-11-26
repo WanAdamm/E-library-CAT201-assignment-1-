@@ -28,6 +28,18 @@ public class Book {
         this.borrowerName = borrowerName;
     }
 
+    // copy constructor
+    public Book(Book book)
+    {
+        this.title = book.title;
+        this.author = book.author;
+        this.ISBN = book.ISBN;
+        this.imgURL = book.imgURL;
+        this.borrowerName = book.borrowerName;
+        this.availability = book.availability;
+
+    }
+
     // Getters and setters
     public String getTitle() {
         return title;

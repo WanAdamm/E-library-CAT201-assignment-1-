@@ -36,8 +36,25 @@ public class BookPageController {
     private TextField searchBar;
 
     public void onUserHittingEnterInSearchBar() {
+        Book resultantBook;
         String searchString = searchBar.getText(); // remember to use this as input field
 
+        if(App.library.searchByAuthor(searchString) != null)
+        {
+            resultantBook = new Book(App.library.searchByAuthor(searchString));
+        }
+
+        if(App.library.searchByTitle(searchString) != null)
+        {
+            resultantBook = new Book(App.library.searchByTitle(searchString));
+        }
+
+        if(App.library.searchByISBN(searchString) != null)
+        {
+            resultantBook = new Book(App.library.searchByISBN(searchString));
+        }
+
+        // TODO: some code to update the UI
     }
 
     @FXML
@@ -98,7 +115,7 @@ public class BookPageController {
                 Image image = new Image(imageUrl);
                 bookThumbnail.setImage(image);
             }
-            
+
             bookThumbnail.setOnMousePressed(e -> {
                 try {
                     System.out.println(book.getTitle());
