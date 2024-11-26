@@ -65,7 +65,7 @@
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #e5e5e5;">
                <children>
-                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="457.0" prefWidth="113.0" style="-fx-font-weight: bold;" text="BORROW" textAlignment="CENTER" wrapText="true">
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="457.0" prefWidth="113.0" style="-fx-font-weight: bold;" text="ADD BOOK" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -123,14 +123,17 @@
                               <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@../../../../../../../../../../../Downloads/51l6XIoa3rL.jpg" />
+                              <Image url="@../../../image/unknown%20book.jpg" />
                            </image>
                         </ImageView>
                         <VBox alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="344.0">
                            <children>
                               <Label text="Title" />
+                              <TextField fx:id="title" />
                               <Label text="Author" />
-                              <Label text="Genre" />
+                              <TextField fx:id="author" />
+                              <Label text="ISBN" />
+                              <TextField fx:id="isbn" />
                            </children>
                            <opaqueInsets>
                               <Insets />
@@ -151,22 +154,6 @@
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cecccc;" GridPane.columnIndex="2">
                <children>
                   <Label contentDisplay="CENTER" onMouseClicked="#switchToBookPage" prefHeight="40.0" prefWidth="169.0" style="-fx-font-weight: bold;" text="BOOKS &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="148.0" style="-fx-font-weight: bold;" text="SERVICE &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="153.0" style="-fx-font-weight: bold;" text="CONTACT &gt;" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>

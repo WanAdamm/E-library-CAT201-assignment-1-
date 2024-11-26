@@ -156,22 +156,6 @@
                         <Insets left="10.0" />
                      </padding>
                   </Label>
-                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="148.0" style="-fx-font-weight: bold;" text="SERVICE &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="153.0" style="-fx-font-weight: bold;" text="CONTACT &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
                </children></VBox>
          </children>
       </GridPane>

@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="701.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.BookPageController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="701.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.BookDetailPageController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
    </columnConstraints>
@@ -118,7 +118,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="102.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="bookCover" fitHeight="102.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="http://ecx.images-amazon.com/images/I/51l6XIoa3rL.jpg" />
                            </image>
@@ -128,10 +128,11 @@
                         </ImageView>
                         <VBox alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="344.0">
                            <children>
-                              <Label text="Title" />
-                              <Label text="Author" />
-                              <Label text="Genre" />
-                              <Label text="Availability" />
+                              <Label fx:id="title" text="Title" />
+                              <Label fx:id="author" text="Author" />
+                              <Label fx:id="ISBN" text="Genre" />
+                              <Label fx:id="availability" text="Availability" />
+                              <Label fx:id="borrowerName" text="BorrowerName" />
                            </children>
                            <opaqueInsets>
                               <Insets />
@@ -151,17 +152,7 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cecccc;" GridPane.columnIndex="2">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="BOOKS &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="129.0" style="-fx-font-weight: bold;" text=" SERVICE &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="129.0" style="-fx-font-weight: bold;" text="CONTACT &gt;" textAlignment="CENTER" wrapText="true">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="129.0" style="-fx-font-weight: bold;" onMouseClicked="#switchToBookPage" text="BOOKS &gt;" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>

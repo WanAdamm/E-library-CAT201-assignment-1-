@@ -98,6 +98,24 @@ public class BookPageController {
                 Image image = new Image(imageUrl);
                 bookThumbnail.setImage(image);
             }
+            
+            bookThumbnail.setOnMousePressed(e -> {
+                try {
+                    System.out.println(book.getTitle());
+                    // Load the FXML file
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("bookDetail.fxml"));
+                    Parent root = loader.load(); // This initializes the controller
+
+                    // Get the controller
+                    BookDetailPageController controller = loader.getController();
+                    controller.setBook(book); // Pass the book to the next page
+
+                    // Switch the scene
+                    App.setRoot(root); 
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            });
 
             VBox infoContainer = new VBox();
             infoContainer.setAlignment(Pos.CENTER_LEFT);
@@ -157,16 +175,19 @@ public class BookPageController {
                 }
             });
 
+            
             buttonContainer.getChildren().add(borrowButton);
-
+            
             container.getChildren().add(bookThumbnail);
             container.getChildren().add(infoContainer);
             container.getChildren().add(buttonContainer);
-
+            
             HBox.setMargin(bookThumbnail, new Insets(5.0, 5.0, 5.0, 5.0));
             HBox.setMargin(infoContainer, new Insets(5.0, 5.0, 5.0, 5.0));
+            
 
             bookListContainer.getChildren().add(container);
+
         }
     }
 }

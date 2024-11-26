@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
@@ -157,22 +154,6 @@
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cecccc;" GridPane.columnIndex="2">
                <children>
                   <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="145.0" style="-fx-font-weight: bold;" text="BOOKS &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="149.0" style="-fx-font-weight: bold;" text="SERVICE &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="152.0" style="-fx-font-weight: bold;" text="CONTACT &gt;" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>
