@@ -36,25 +36,44 @@ public class BookPageController {
     private TextField searchBar;
 
     public void onUserHittingEnterInSearchBar() {
-        Book resultantBook;
-        String searchString = searchBar.getText(); // remember to use this as input field
+        try {
+            Book resultantBook = null;
+            String searchString = searchBar.getText(); // remember to use this as input field
 
-        if(App.library.searchByAuthor(searchString) != null)
-        {
-            resultantBook = new Book(App.library.searchByAuthor(searchString));
+            if (App.library.searchByAuthor(searchString) != null) {
+                resultantBook = new Book(App.library.searchByAuthor(searchString));
+            }
+
+            if (App.library.searchByTitle(searchString) != null) {
+                resultantBook = new Book(App.library.searchByTitle(searchString));
+            }
+
+            if (App.library.searchByISBN(searchString) != null) {
+                resultantBook = new Book(App.library.searchByISBN(searchString));
+            }
+
+            // Load the FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("searchResult.fxml"));
+            Parent root = loader.load(); // This initializes the controller
+
+            // Get the controller
+            SearchResultPageController controller = loader.getController();
+
+            if (resultantBook != null) {
+                controller.setBook(resultantBook); // Pass the book to the next page
+
+                // Switch the scene
+                App.setRoot(root);
+            } else {
+                App.setRoot("noSearchResult"); // switch to no result page
+            }
+
+            // clear the searchbar
+            searchBar.clear();
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
 
-        if(App.library.searchByTitle(searchString) != null)
-        {
-            resultantBook = new Book(App.library.searchByTitle(searchString));
-        }
-
-        if(App.library.searchByISBN(searchString) != null)
-        {
-            resultantBook = new Book(App.library.searchByISBN(searchString));
-        }
-
-        // TODO: some code to update the UI
     }
 
     @FXML
@@ -118,7 +137,6 @@ public class BookPageController {
 
             bookThumbnail.setOnMousePressed(e -> {
                 try {
-                    System.out.println(book.getTitle());
                     // Load the FXML file
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("bookDetail.fxml"));
                     Parent root = loader.load(); // This initializes the controller
@@ -128,7 +146,7 @@ public class BookPageController {
                     controller.setBook(book); // Pass the book to the next page
 
                     // Switch the scene
-                    App.setRoot(root); 
+                    App.setRoot(root);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -144,27 +162,55 @@ public class BookPageController {
             Label author = new Label(book.getAuthor());
             Label isbn = new Label(book.getISBN());
 
-            String available;
-            if (book.isAvailable()) {
-                available = "available";
-            } else {
-                available = "unavailable";
-            }
-
-            Label availability = new Label(available);
-
             infoContainer.getChildren().add(title);
             infoContainer.getChildren().add(author);
             infoContainer.getChildren().add(isbn);
-            infoContainer.getChildren().add(availability);
 
             VBox buttonContainer = new VBox();
             Button borrowButton = new Button("Borrow");
 
-            if(!book.isAvailable())
-            {
-                borrowButton.setDisable(true);
+            String available;
+            if (book.isAvailable()) {
+
+                // borrowButton functionality when book is available
+                borrowButton.setOnMousePressed(e -> {
+                    try {
+                        // Load the FXML file
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("borrowerFormPage.fxml"));
+                        Parent root = loader.load(); // This initializes the controller
+
+                        // Get the controller
+                        BorrowerFormPageController controller = loader.getController();
+                        controller.setBook(book); // Pass the book to the next page
+
+                        // Switch the scene
+                        App.setRoot(root); // Assuming App.setScene is defined in your app
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                });
+
+                available = "available";
+            } else {
+                available = "unavailable";
+
+                borrowButton.setText("Return");
+
+                // borrowButton functionality when book is available
+                borrowButton.setOnMousePressed(e -> {
+                    book.setBorrowerName("");
+                    book.setAvailability(true);
+
+                    try {
+                        App.setRoot("book");
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                });
             }
+
+            Label availability = new Label(available);
+            infoContainer.getChildren().add(availability);
 
             buttonContainer.setAlignment(Pos.BOTTOM_CENTER);
             buttonContainer.setPrefHeight(200.0);
@@ -173,38 +219,21 @@ public class BookPageController {
             borrowButton.setPrefHeight(26.0);
             borrowButton.setPrefWidth(78.0);
 
-            // borrow button functionality
-
-            borrowButton.setOnMousePressed(e -> {
-                try {
-                    // Load the FXML file
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("borrowerFormPage.fxml"));
-                    Parent root = loader.load(); // This initializes the controller
-
-                    // Get the controller
-                    BorrowerFormPageController controller = loader.getController();
-                    controller.setBook(book); // Pass the book to the next page
-
-                    // Switch the scene
-                    App.setRoot(root); // Assuming App.setScene is defined in your app
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-            });
-
-            
             buttonContainer.getChildren().add(borrowButton);
-            
+
             container.getChildren().add(bookThumbnail);
             container.getChildren().add(infoContainer);
             container.getChildren().add(buttonContainer);
-            
+
             HBox.setMargin(bookThumbnail, new Insets(5.0, 5.0, 5.0, 5.0));
             HBox.setMargin(infoContainer, new Insets(5.0, 5.0, 5.0, 5.0));
-            
 
             bookListContainer.getChildren().add(container);
-
         }
+
+        // event handler when user hit enter on searchbar
+        searchBar.setOnAction(e -> {
+            onUserHittingEnterInSearchBar();
+        });
     }
 }

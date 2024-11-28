@@ -153,14 +153,6 @@
             </ScrollPane>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cecccc;" GridPane.columnIndex="2">
                <children>
-                  <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="145.0" style="-fx-font-weight: bold;" text="BOOKS &gt;" textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
                   <Label contentDisplay="CENTER" onMouseClicked="#switchToAddBookPage" prefHeight="40.0" prefWidth="152.0" style="-fx-font-weight: bold;" text="ADD BOOKS &gt;" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="18.0" />
