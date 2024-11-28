@@ -119,16 +119,22 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="102.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="bookThumbnail" fitHeight="102.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                            <HBox.margin>
                               <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@../../../image/unknown%20book.jpg" />
+                              <Image url="file:C:/Users/coder/OneDrive/Desktop/CAT201/Project/elibrary/elibrary/src/main/image/unknown book.jpg" />
                            </image>
                         </ImageView>
-                        <VBox alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="344.0">
+                        <VBox alignment="CENTER_LEFT" prefHeight="238.0" prefWidth="855.0">
                            <children>
+                              <Label text="Image" />
+                              <Button fx:id="selectImage" mnemonicParsing="false" onAction="#getImagePath" text="Select Image">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
                               <Label text="Title" />
                               <TextField fx:id="title" />
                               <Label text="Author" />

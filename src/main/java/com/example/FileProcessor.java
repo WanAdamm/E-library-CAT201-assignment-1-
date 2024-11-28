@@ -15,7 +15,7 @@ public class FileProcessor {
             while ((line = br.readLine()) != null) {
                 // Split the line on commas, respecting quoted fields
                 String[] fields = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                
+
                 // Convert the array to an ArrayList and add it to the main list
                 ArrayList<String> row = new ArrayList<>();
                 for (String field : fields) {

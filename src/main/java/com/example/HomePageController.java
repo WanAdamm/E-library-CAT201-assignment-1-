@@ -15,8 +15,7 @@ public class HomePageController {
     @FXML
     private TextField searchBar;
 
-    public void initialize()
-    {
+    public void initialize() {
         searchBar.setDisable(true);
     }
 }

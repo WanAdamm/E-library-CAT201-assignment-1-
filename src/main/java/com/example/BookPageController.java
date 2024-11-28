@@ -1,12 +1,7 @@
 package com.example;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -79,40 +74,11 @@ public class BookPageController {
     @FXML
     private VBox bookListContainer;
 
-    private ObservableList<Book> books; // list used as a place to store book objects
-
     @FXML
     public void initialize() {
-        books = FXCollections.observableArrayList();
-
-        String filePath = "src/main/data/book data.csv"; // Replace with your file path
-
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            br.readLine(); // skip header
-            while ((line = br.readLine()) != null) {
-                // Split the line on commas, respecting quoted fields
-                String[] fields = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-
-                // Convert the array to an ArrayList and add it to the main list
-                ArrayList<String> row = new ArrayList<>();
-                for (String field : fields) {
-                    row.add(field.trim()); // Trim to remove unnecessary spaces
-                }
-
-                Book book = new Book(row.get(0), row.get(1), row.get(2), row.get(3), "");
-                App.library.addBook(book);
-
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         for (Book book : App.library.getBook()) {
-            books.add(book);
-        }
 
-        for (Book book : books) {
             HBox container = new HBox();
             container.setPrefHeight(100);
             container.setPrefWidth(200);
