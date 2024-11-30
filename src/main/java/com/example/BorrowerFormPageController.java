@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 
 public class BorrowerFormPageController {
 
@@ -59,14 +60,17 @@ public class BorrowerFormPageController {
     }
 
     @FXML
-    private TextField name; // Use to enter borrower name
+    private TextField borrowerName; // Use to enter borrower name
 
     @FXML
     private TextField studentID; // No use
 
+    @FXML
+    private Button submit;
+
     // Method to check all fields and update button state
     private void checkFields() {
-        boolean allValid = name.getText() != null && !name.getText().trim().isEmpty() &&
+        boolean allValid = borrowerName.getText() != null && !borrowerName.getText().trim().isEmpty() &&
                 studentID.getText() != null && !studentID.getText().trim().isEmpty();
 
         submit.setDisable(!allValid); // Enable button if all fields are valid
@@ -74,21 +78,29 @@ public class BorrowerFormPageController {
 
     @FXML
     public void submitBorrowerInfo() throws IOException {
-        String borrowerName = name.getText();
+        String borrowerNameString = borrowerName.getText();
 
         for (Book bookk : App.library.getBook()) {
             if (bookk.getAuthor().equals(book.getAuthor())) {
 
                 book.setAvailability(false); // set the availability to false
-                book.setBorrowerName(borrowerName); // set the borrowerName
+                book.setBorrowerName(borrowerNameString); // set the borrowerName
             }
         }
 
         // clear both textField
-        name.clear();
+        borrowerName.clear();
         studentID.clear();
 
         App.setRoot("book");
+    }
+
+    @FXML
+    private void initialize() {
+        submit.setDisable(true);
+
+        borrowerName.textProperty().addListener((observable, oldValue, newValue) -> checkFields());
+        studentID.textProperty().addListener((observable, oldValue, newValue) -> checkFields());
     }
 
 }

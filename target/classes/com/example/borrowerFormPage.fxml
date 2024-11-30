@@ -176,8 +176,8 @@
                         <TextField fx:id="studentID" prefHeight="25.0" prefWidth="294.0" />
                         <HBox alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="422.0">
                             <children>
-                                <Button mnemonicParsing="false" onMouseClicked="#submitBorrowerInfo"
-                                    text="Submit" />
+                                <Button fx:id="submit" mnemonicParsing="false"
+                                    onMouseClicked="#submitBorrowerInfo" text="Submit" />
                             </children>
                         </HBox>
                     </children>
