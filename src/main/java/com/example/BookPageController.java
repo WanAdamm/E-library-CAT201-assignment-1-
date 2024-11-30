@@ -45,7 +45,7 @@ public class BookPageController {
             // Get the controller
             SearchResultPageController controller = loader.getController();
 
-            if (searchResult != null) {
+            if (!searchResult.isEmpty()) {
                 controller.setBook(searchResult); // Pass the selected book data to the search result page
 
                 // Switch the scene
