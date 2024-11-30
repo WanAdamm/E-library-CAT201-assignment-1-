@@ -25,11 +25,10 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
 
-        String filePath = "src/main/data/book data.csv"; // Replace with your file path
+        String filePath = "src/main/data/book data.csv";
 
         // only read the file at initialization once
-        try (
-                BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             br.readLine(); // skip header
             while ((line = br.readLine()) != null) {
