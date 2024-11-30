@@ -171,7 +171,7 @@
                             </VBox.margin>
                         </Line>
                         <Label prefHeight="17.0" prefWidth="55.0" text="Name" />
-                        <TextField fx:id="name" prefHeight="25.0" prefWidth="336.0" />
+                        <TextField fx:id="borrowerName" prefHeight="25.0" prefWidth="336.0" />
                         <Label prefHeight="17.0" prefWidth="78.0" text="Student ID" />
                         <TextField fx:id="studentID" prefHeight="25.0" prefWidth="294.0" />
                         <HBox alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="422.0">
