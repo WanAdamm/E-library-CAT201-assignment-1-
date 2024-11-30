@@ -40,7 +40,7 @@ public class BookDetailPageController {
     @FXML
     private ImageView bookCover; // This is linked to the fx:id in FXML
 
-    private Book book;
+    private Book book; // book object for this page
 
     // Method to update UI elements
     private void updateUI() {
@@ -78,6 +78,6 @@ public class BookDetailPageController {
     @FXML
     public void initialize()
     {
-        searchBar.setDisable(true);
+        searchBar.setDisable(true); // disable search bar
     }
 }

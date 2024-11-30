@@ -44,12 +44,10 @@ public class AddBookPageController {
 
     // get image url
     public void getImagePath() {
-        FileChooser fileChooser = new FileChooser();
+        FileChooser fileChooser = new FileChooser(); // use to choose file for image thumbnail
         fileChooser.setTitle("Open File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("All Files", "*.*"),
-                new FileChooser.ExtensionFilter("Text Files", "*.txt"),
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")); // only select image file
 
         File selectedFile = fileChooser.showOpenDialog(selectImage.getScene().getWindow()); // using the current window
         imageUrl = selectedFile.getAbsolutePath();
@@ -87,6 +85,8 @@ public class AddBookPageController {
 
     private void checkImage() {
         if (imageUrl != null && !imageUrl.trim().isEmpty()) {
+
+            // if image is unloadable then load default image thumbnail
             try {
                 // Load the image
                 Image image = new Image(imageUrl, true); // 'true' enables background loading

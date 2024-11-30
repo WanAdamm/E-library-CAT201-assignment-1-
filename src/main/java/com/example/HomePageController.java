@@ -16,6 +16,6 @@ public class HomePageController {
     private TextField searchBar;
 
     public void initialize() {
-        searchBar.setDisable(true);
+        searchBar.setDisable(true); // ensure search bar is disable in home page
     }
 }

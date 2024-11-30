@@ -35,6 +35,7 @@ public class BookPageController {
             Book resultantBook = null;
             String searchString = searchBar.getText(); // remember to use this as input field
 
+            // check if the data match any author,title,ISBN of any book
             if (App.library.searchByAuthor(searchString) != null) {
                 resultantBook = new Book(App.library.searchByAuthor(searchString));
             }
@@ -55,7 +56,7 @@ public class BookPageController {
             SearchResultPageController controller = loader.getController();
 
             if (resultantBook != null) {
-                controller.setBook(resultantBook); // Pass the book to the next page
+                controller.setBook(resultantBook); // Pass the selected book data to the search result page
 
                 // Switch the scene
                 App.setRoot(root);
@@ -77,6 +78,7 @@ public class BookPageController {
     @FXML
     public void initialize() {
 
+        // for every book data in the Library create a listing for them in the book page
         for (Book book : App.library.getBook()) {
 
             HBox container = new HBox();
@@ -96,7 +98,7 @@ public class BookPageController {
                 Image image = new Image(imageUrl);
                 bookThumbnail.setImage(image);
             } catch (Exception e) {
-                imageUrl = "http://ecx.images-amazon.com/images/I/51l6XIoa3rL.jpg"; // default image if data fails.
+                imageUrl = "file:C:/Users/coder/OneDrive/Desktop/CAT201/Project/elibrary/elibrary/src/main/image/unknown book.jpg"; // default image if data fails.
                 Image image = new Image(imageUrl);
                 bookThumbnail.setImage(image);
             }

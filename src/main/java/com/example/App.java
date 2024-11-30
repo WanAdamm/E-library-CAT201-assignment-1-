@@ -5,8 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-import javafx.event.EventHandler;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -19,7 +17,7 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private static Scene scene;
-    public static Library library = new Library();
+    public static Library library = new Library(); //Library is a static object accessible by all page
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -44,20 +42,21 @@ public class App extends Application {
                     row.add(field.trim()); // Trim to remove unnecessary spaces
                 }
 
+                // create new book object for each line of data
                 Book book = new Book(row.get(0), row.get(1), row.get(2), row.get(3), "");
+                // add those book to the library
                 App.library.addBook(book);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-        // Define the function to run when the app is closed
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent event) {
-                onAppClose(); // Run your function when the application is stopped
-            }
-        });
+    // run when the app is closed
+    @Override
+    public void stop() {
+        // Code to run when the application is stopped
+        onAppClose();  // Run the function to clean up resources
     }
 
     // save data on app close
@@ -66,6 +65,7 @@ public class App extends Application {
 
         String[] headers = { "Image URL", "Title", "Author", "ISBN" };
 
+        // by default the file is opened and rewritten
         try (FileWriter writer = new FileWriter(filePath)) {
             // Write headers
             writer.append(String.join(",", headers)); // Join headers with commas
@@ -88,10 +88,12 @@ public class App extends Application {
         scene.setRoot(loadFXML(fxml));
     }
 
+    // overloaded setRoot function that accept Root Node instead of fxml file
     static void setRoot(Parent root) throws IOException {
         scene.setRoot(root);
     }
 
+    // function to load fxml
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();

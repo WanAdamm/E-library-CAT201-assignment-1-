@@ -1,0 +1,87 @@
+Date : 2024-11-30 12:42:17
+Directory : c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary
+Total : 42 files,  3487 codes, 123 comments, 248 blanks, all 3858 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| XML      |         15 |      2,317 |         64 |         42 |      2,423 |
+| Java     |         25 |      1,170 |         59 |        204 |      1,433 |
+| CSS      |          2 |          0 |          0 |          2 |          2 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                           | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                              |         42 |      3,487 |        123 |        248 |      3,858 |
+| . (Files)                                                                                                                      |          1 |         65 |          2 |          0 |         67 |
+| src                                                                                                                            |         20 |      1,817 |         83 |        219 |      2,119 |
+| src\main                                                                                                                       |         20 |      1,817 |         83 |        219 |      2,119 |
+| src\main\java                                                                                                                  |         12 |        691 |         52 |        197 |        940 |
+| src\main\java (Files)                                                                                                          |          1 |         11 |          0 |          4 |         15 |
+| src\main\java\com                                                                                                              |         11 |        680 |         52 |        193 |        925 |
+| src\main\java\com\example                                                                                                      |         11 |        680 |         52 |        193 |        925 |
+| src\main\resources                                                                                                             |          8 |      1,126 |         31 |         22 |      1,179 |
+| src\main\resources\com                                                                                                         |          8 |      1,126 |         31 |         22 |      1,179 |
+| src\main\resources\com\example                                                                                                 |          8 |      1,126 |         31 |         22 |      1,179 |
+| src\main\resources\com\example (Files)                                                                                         |          7 |      1,126 |         31 |         21 |      1,178 |
+| src\main\resources\com\example\stylesheet                                                                                      |          1 |          0 |          0 |          1 |          1 |
+| target                                                                                                                         |         21 |      1,605 |         38 |         29 |      1,672 |
+| target\classes                                                                                                                 |         21 |      1,605 |         38 |         29 |      1,672 |
+| target\classes (Files)                                                                                                         |          1 |          6 |          0 |          0 |          6 |
+| target\classes\com                                                                                                             |         20 |      1,599 |         38 |         29 |      1,666 |
+| target\classes\com\example                                                                                                     |         20 |      1,599 |         38 |         29 |      1,666 |
+| target\classes\com\example (Files)                                                                                             |         19 |      1,599 |         38 |         28 |      1,665 |
+| target\classes\com\example\stylesheet                                                                                          |          1 |          0 |          0 |          1 |          1 |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                       | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\pom.xml                                                       | XML      |         65 |          2 |          0 |         67 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\AddBookPageController.java          | Java     |         89 |          9 |         26 |        124 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\App.java                            | Java     |         75 |         14 |         19 |        108 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\Book.java                           | Java     |         70 |          4 |         18 |         92 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\BookDetailPageController.java       | Java     |         67 |          1 |         16 |         84 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\BookPageController.java             | Java     |        145 |         14 |         47 |        206 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\BorrowerFormPageController.java     | Java     |         63 |          3 |         21 |         87 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\FileProcessor.java                  | Java     |         28 |          3 |          5 |         36 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\HomePageController.java             | Java     |         15 |          0 |          7 |         22 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\Library.java                        | Java     |         39 |          0 |         10 |         49 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\NoSearchResultPageController.java   | Java     |         13 |          0 |          5 |         18 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\com\example\SearchResultPageController.java     | Java     |         76 |          4 |         19 |         99 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\java\module-info.java                                | Java     |         11 |          0 |          4 |         15 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\resources\com\example\addBook.fxml                   | XML      |        179 |          0 |          3 |        182 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\resources\com\example\book.fxml                      | XML      |        136 |         31 |          3 |        170 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\resources\com\example\bookDetail.fxml                | XML      |        162 |          0 |          3 |        165 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\resources\com\example\borrowerFormPage.fxml          | XML      |        172 |          0 |          3 |        175 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\resources\com\example\home.fxml                      | XML      |        161 |          0 |          3 |        164 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\resources\com\example\noSearchResult.fxml            | XML      |        154 |          0 |          3 |        157 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\resources\com\example\searchResult.fxml              | XML      |        162 |          0 |          3 |        165 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\src\main\resources\com\example\stylesheet\style.css           | CSS      |          0 |          0 |          1 |          1 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\AddBookPageController.class        | Java     |         65 |          0 |          0 |         65 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\App$1.class                        | Java     |         12 |          0 |          0 |         12 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\App.class                          | Java     |         67 |          0 |          1 |         68 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\Book.class                         | Java     |         18 |          0 |          0 |         18 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\BookDetailPageController.class     | Java     |         34 |          0 |          3 |         37 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\BookPageController.class           | Java     |        108 |          0 |          0 |        108 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\BorrowerFormPageController.class   | Java     |         32 |          7 |          0 |         39 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\FileProcessor.class                | Java     |         32 |          0 |          0 |         32 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\HomePageController.class           | Java     |         16 |          0 |          0 |         16 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\Library.class                      | Java     |         26 |          0 |          0 |         26 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\NoSearchResultPageController.class | Java     |         14 |          0 |          0 |         14 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\SearchResultPageController.class   | Java     |         49 |          0 |          3 |         52 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\addBook.fxml                       | XML      |        179 |          0 |          3 |        182 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\book.fxml                          | XML      |        136 |         31 |          3 |        170 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\bookDetail.fxml                    | XML      |        162 |          0 |          3 |        165 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\borrowerFormPage.fxml              | XML      |        172 |          0 |          3 |        175 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\home.fxml                          | XML      |        161 |          0 |          3 |        164 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\noSearchResult.fxml                | XML      |        154 |          0 |          3 |        157 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\searchResult.fxml                  | XML      |        162 |          0 |          3 |        165 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\com\example\stylesheet\style.css               | CSS      |          0 |          0 |          1 |          1 |
+| c:\Users\coder\OneDrive\Desktop\CAT201\Project\elibrary\elibrary\target\classes\module-info.class                              | Java     |          6 |          0 |          0 |          6 |
+| Total                                                                                                                          |          |      3,487 |        123 |        248 |      3,858 |
++--------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
