@@ -82,9 +82,7 @@ public class BorrowerFormPageController {
 
         for (Book bookk : App.library.getBook()) {
             if (bookk.getAuthor().equals(book.getAuthor())) {
-
-                book.setAvailability(false); // set the availability to false
-                book.setBorrowerName(borrowerNameString); // set the borrowerName
+                bookk.borrowBook(borrowerNameString);
             }
         }
 

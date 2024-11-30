@@ -158,8 +158,7 @@ public class BookPageController {
 
                 // borrowButton functionality when book is available
                 borrowButton.setOnMousePressed(e -> {
-                    book.setBorrowerName("");
-                    book.setAvailability(true);
+                    book.returnBook();
 
                     try {
                         App.setRoot("book");

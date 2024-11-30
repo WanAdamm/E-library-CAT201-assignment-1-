@@ -29,8 +29,7 @@ public class Book {
     }
 
     // copy constructor
-    public Book(Book book)
-    {
+    public Book(Book book) {
         this.title = book.title;
         this.author = book.author;
         this.ISBN = book.ISBN;
@@ -87,5 +86,15 @@ public class Book {
 
     public void setBorrowerName(String borrowerName) {
         this.borrowerName = borrowerName;
+    }
+
+    public void borrowBook(String borrowerName) {
+        this.borrowerName = borrowerName;
+        this.availability = false;
+    }
+
+    public void returnBook() {
+        this.availability = true;
+        this.borrowerName = "";
     }
 }
