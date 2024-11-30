@@ -103,6 +103,7 @@ public class BookPageController {
                 bookThumbnail.setImage(image);
             }
 
+            // when the book thumbnail is pressed on go to the book detail page
             bookThumbnail.setOnMousePressed(e -> {
                 try {
                     // Load the FXML file
@@ -137,6 +138,7 @@ public class BookPageController {
             VBox buttonContainer = new VBox();
             Button borrowButton = new Button("Borrow");
 
+            // if book is available borrow button would appear else return button appear
             String available;
             if (book.isAvailable()) {
 
@@ -162,7 +164,7 @@ public class BookPageController {
             } else {
                 available = "unavailable";
 
-                borrowButton.setText("Return");
+                borrowButton.setText("Return"); // set the borrow button to return if book is not available
 
                 // borrowButton functionality when book is available
                 borrowButton.setOnMousePressed(e -> {

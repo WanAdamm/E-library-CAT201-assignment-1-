@@ -59,10 +59,18 @@ public class BorrowerFormPageController {
     }
 
     @FXML
-    private TextField name;
+    private TextField name; // Use to enter borrower name
 
     @FXML
-    private TextField studentID;
+    private TextField studentID; // No use
+
+    // Method to check all fields and update button state
+    private void checkFields() {
+        boolean allValid = name.getText() != null && !name.getText().trim().isEmpty() &&
+                studentID.getText() != null && !studentID.getText().trim().isEmpty();
+
+        submit.setDisable(!allValid); // Enable button if all fields are valid
+    }
 
     @FXML
     public void submitBorrowerInfo() throws IOException {
