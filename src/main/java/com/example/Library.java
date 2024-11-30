@@ -19,30 +19,71 @@ public class Library {
         return bookList;
     }
 
-    public Book searchByTitle(String title) {
+    public ArrayList<Book> searchBook(String searchString) {
+        ArrayList<Book> searchResult = new ArrayList<>();
+
+        if (searchByAuthor(searchString) != null) {
+            for (Book book : searchByAuthor(searchString)) {
+                searchResult.add(book);
+            }
+        }
+
+        if (searchByTitle(searchString) != null) {
+            for (Book book : searchByTitle(searchString)) {
+                searchResult.add(book);
+            }
+        }
+
+        if (searchByISBN(searchString) != null) {
+            for (Book book : searchByISBN(searchString)) {
+                searchResult.add(book);
+            }
+        }
+
+        return searchResult;
+    }
+
+    public ArrayList<Book> searchByTitle(String title) {
+        ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : bookList) {
             if (book.getTitle().equalsIgnoreCase(title)) {
-                return book;
+                searchResult.add(book);
             }
+        }
+
+        if (!searchResult.isEmpty()) {
+            return searchResult;
         }
         return null; // If no book with the given title is found
     }
 
-    public Book searchByAuthor(String author) {
+    public ArrayList<Book> searchByAuthor(String author) {
+        ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : bookList) {
             if (book.getAuthor().equalsIgnoreCase(author)) {
-                return book;
+                searchResult.add(book);
             }
         }
+
+        if (!searchResult.isEmpty()) {
+            return searchResult;
+        }
+
         return null; // If no book with the given author is found
     }
 
-    public Book searchByISBN(String ISBN) {
+    public ArrayList<Book> searchByISBN(String ISBN) {
+        ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : bookList) {
             if (book.getISBN().equals(ISBN)) {
-                return book;
+                searchResult.add(book);
             }
         }
+
+        if (!searchResult.isEmpty()) {
+            return searchResult;
+        }
+
         return null; // If no book with the given ISBN is found
     }
 }

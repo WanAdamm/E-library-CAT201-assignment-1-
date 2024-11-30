@@ -1,6 +1,7 @@
 package com.example;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,21 +33,10 @@ public class BookPageController {
 
     public void onUserHittingEnterInSearchBar() {
         try {
-            Book resultantBook = null;
+            ArrayList<Book> searchResult = new ArrayList<>();
             String searchString = searchBar.getText(); // remember to use this as input field
 
-            // check if the data match any author,title,ISBN of any book
-            if (App.library.searchByAuthor(searchString) != null) {
-                resultantBook = new Book(App.library.searchByAuthor(searchString));
-            }
-
-            if (App.library.searchByTitle(searchString) != null) {
-                resultantBook = new Book(App.library.searchByTitle(searchString));
-            }
-
-            if (App.library.searchByISBN(searchString) != null) {
-                resultantBook = new Book(App.library.searchByISBN(searchString));
-            }
+            searchResult = App.library.searchBook(searchString);
 
             // Load the FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("searchResult.fxml"));
@@ -55,8 +45,8 @@ public class BookPageController {
             // Get the controller
             SearchResultPageController controller = loader.getController();
 
-            if (resultantBook != null) {
-                controller.setBook(resultantBook); // Pass the selected book data to the search result page
+            if (searchResult != null) {
+                controller.setBook(searchResult); // Pass the selected book data to the search result page
 
                 // Switch the scene
                 App.setRoot(root);
