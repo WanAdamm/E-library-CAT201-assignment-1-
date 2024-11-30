@@ -43,7 +43,7 @@ public class Library {
         return searchResult;
     }
 
-    public ArrayList<Book> searchByTitle(String title) {
+    private ArrayList<Book> searchByTitle(String title) {
         ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : bookList) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -57,7 +57,7 @@ public class Library {
         return null; // If no book with the given title is found
     }
 
-    public ArrayList<Book> searchByAuthor(String author) {
+    private ArrayList<Book> searchByAuthor(String author) {
         ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : bookList) {
             if (book.getAuthor().equalsIgnoreCase(author)) {
@@ -72,7 +72,7 @@ public class Library {
         return null; // If no book with the given author is found
     }
 
-    public ArrayList<Book> searchByISBN(String ISBN) {
+    private ArrayList<Book> searchByISBN(String ISBN) {
         ArrayList<Book> searchResult = new ArrayList<>();
         for (Book book : bookList) {
             if (book.getISBN().equals(ISBN)) {
