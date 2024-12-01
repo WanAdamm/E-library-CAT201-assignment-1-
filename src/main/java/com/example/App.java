@@ -42,7 +42,16 @@ public class App extends Application {
                 }
 
                 // create new book object for each line of data
-                Book book = new Book(row.get(0), row.get(1), row.get(2), row.get(3), "");
+                Book book = new Book(row.get(0), row.get(1), row.get(2), row.get(3), row.get(4));
+                if(row.get(5).trim().equalsIgnoreCase("1"))
+                {
+                    book.setAvailability(true);
+                }
+                else
+                {
+                    book.setAvailability(false);
+                }
+                
                 // add those book to the library
                 App.library.addBook(book);
             }
@@ -62,7 +71,7 @@ public class App extends Application {
     private void onAppClose() {
         String filePath = "src/main/data/book data.csv";
 
-        String[] headers = { "Image URL", "Title", "Author", "ISBN" };
+        String[] headers = { "Image URL", "Title", "Author", "ISBN", "Borrower Name", "Availability" };
 
         // by default the file is opened and rewritten
         try (FileWriter writer = new FileWriter(filePath)) {
@@ -74,6 +83,16 @@ public class App extends Application {
             for (Book bookData : App.library.getBook()) {
                 String data = bookData.getImgUrl() + "," + bookData.getTitle() + "," + bookData.getAuthor() + ","
                         + bookData.getISBN();
+
+                if(bookData.isAvailable())
+                {
+                    data = data + "," + "" + "," + "1";
+                }
+                else
+                {
+                    data = data + "," + bookData.getBorrowerName() + "," + "0";
+                }
+
                 writer.append(data); // Join each row with commas
                 writer.append("\n"); // Newline after each row
             }
