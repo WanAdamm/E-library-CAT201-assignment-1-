@@ -58,7 +58,7 @@ public class AddBookPageController {
     @FXML
     private void addBook() throws IOException // linked to the submit button
     {
-        Book book = new Book(imageUrl, title.getText(), author.getText(), isbn.getText(), "");
+        Book book = new Book(imageUrl, title.getText(), author.getText(), isbn.getText(), "", true);
         App.library.addBook(book);
 
         App.setRoot("book");
