@@ -48,15 +48,19 @@ public class BookDetailPageController {
             if (book.getImgUrl() != null) {
                 bookCover.setImage(new Image(book.getImgUrl()));
             }
+
             if (book.getTitle() != null) {
                 title.setText(book.getTitle());
             }
+
             if (book.getAuthor() != null) {
                 author.setText(book.getAuthor());
             }
+
             if (book.getISBN() != null) {
                 ISBN.setText(book.getISBN());
             }
+
             if(book.isAvailable())
             {
                 availability.setText("available");
@@ -65,7 +69,7 @@ public class BookDetailPageController {
             else
             {
                 availability.setText("unavailable");
-                borrowerName.setText(book.getBorrowerName());
+                borrowerName.setText("Borrower: " + book.getBorrowerName());
             }
         }
     }
