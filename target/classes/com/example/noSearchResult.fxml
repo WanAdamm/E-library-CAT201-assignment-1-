@@ -126,12 +126,12 @@
                   </VBox>
                </children>
             </VBox>
-            <VBox prefHeight="576.0" prefWidth="414.0" style="-fx-background-color: #d5d5d5;"
+            <VBox prefHeight="485.0" prefWidth="1328.0" style="-fx-background-color: #d5d5d5;"
                GridPane.columnIndex="1">
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="422.0">
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="1110.0">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>

@@ -130,7 +130,7 @@
             <VBox prefHeight="576.0" prefWidth="414.0" style="-fx-background-color: #d5d5d5;"
                GridPane.columnIndex="1">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="108.0" prefWidth="1225.0">
                      <children>
                         <ImageView fx:id="bookCover" fitHeight="102.0" fitWidth="65.0"
                            pickOnBounds="true" preserveRatio="true">
@@ -168,9 +168,9 @@
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cecccc;"
                GridPane.columnIndex="2">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0"
-                     prefWidth="129.0" style="-fx-font-weight: bold;"
-                     onMouseClicked="#switchToBookPage" text="BOOKS &gt;" textAlignment="CENTER"
+                  <Label alignment="CENTER" contentDisplay="CENTER"
+                     onMouseClicked="#switchToBookPage" prefHeight="40.0" prefWidth="129.0"
+                     style="-fx-font-weight: bold;" text="BOOKS &gt;" textAlignment="CENTER"
                      wrapText="true">
                      <font>
                         <Font size="18.0" />

@@ -125,9 +125,9 @@
                   </VBox>
                </children>
             </VBox>
-            <ScrollPane GridPane.columnIndex="1">
+            <ScrollPane prefHeight="485.0" prefWidth="1664.0" GridPane.columnIndex="1">
                <content>
-                  <VBox fx:id="bookListContainer" prefHeight="576.0" prefWidth="414.0"
+                  <VBox fx:id="bookListContainer" prefHeight="576.0" prefWidth="1080.0"
                      style="-fx-background-color: #d5d5d5;" />
                </content>
             </ScrollPane>

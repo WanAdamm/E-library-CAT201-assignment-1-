@@ -73,7 +73,7 @@ public class BookPageController {
 
             HBox container = new HBox();
             container.setPrefHeight(100);
-            container.setPrefWidth(200);
+            container.setPrefWidth(1080);
 
             ImageView bookThumbnail = new ImageView();
             bookThumbnail.setFitHeight(102.0);
@@ -88,7 +88,11 @@ public class BookPageController {
                 Image image = new Image(imageUrl);
                 bookThumbnail.setImage(image);
             } catch (Exception e) {
-                imageUrl = "file:C:/Users/coder/OneDrive/Desktop/CAT201/Project/elibrary/elibrary/src/main/image/unknown book.jpg"; // default image if data fails.
+                imageUrl = "file:C:/Users/coder/OneDrive/Desktop/CAT201/Project/elibrary/elibrary/src/main/image/unknown book.jpg"; // default
+                                                                                                                                    // image
+                                                                                                                                    // if
+                                                                                                                                    // data
+                                                                                                                                    // fails.
                 Image image = new Image(imageUrl);
                 bookThumbnail.setImage(image);
             }
