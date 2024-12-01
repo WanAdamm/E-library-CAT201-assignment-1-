@@ -81,7 +81,7 @@ public class BorrowerFormPageController {
         String borrowerNameString = borrowerName.getText();
 
         for (Book bookk : App.library.getBook()) {
-            if (bookk.getAuthor().equals(book.getAuthor())) {
+            if (bookk.getISBN().equals(book.getISBN())) {
                 bookk.borrowBook(borrowerNameString);
             }
         }
